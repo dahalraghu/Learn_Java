@@ -1,0 +1,53 @@
+#select
+SELECT * FROM bootcampbatchsecond.employee;
+SELECT id,firstname FROM bootcampbatchsecond.employee;
+select * from bootcampbatchsecond.employee limit 5;
+
+#where 
+SELECT * FROM bootcampbatchsecond.employee where id = 3;
+SELECT id, firstname,dob FROM bootcampbatchsecond.employee where id = 3;
+
+#order 
+SELECT * FROM bootcampbatchsecond.employee order by id desc;
+SELECT * FROM bootcampbatchsecond.employee order by id desc limit 4;
+SELECT * FROM bootcampbatchsecond.employee order by dob asc;
+SELECT * FROM bootcampbatchsecond.employee order by firstname asc;
+SELECT * FROM bootcampbatchsecond.employee order by firstname desc, salary asc, middlename desc;
+
+#and
+SELECT * FROM bootcampbatchsecond.employee where address = 'Kathmandu' 
+and middlename = 'Ganga' and id=3;
+
+SELECT * FROM bootcampbatchsecond.employee where address = 'Kathamndu Nepal' 
+and middlename = 'Pd' and id=1;
+
+#or
+SELECT * FROM bootcampbatchsecond.employee where address = 'Pokhara' 
+or id = '2';
+
+#and, or
+SELECT * FROM bootcampbatchsecond.employee where address = 'Pokhara' 
+or id = '2' and salary = 450;
+
+#not 
+SELECT * FROM bootcampbatchsecond.employee where  middlename = 'Pd';
+SELECT * FROM bootcampbatchsecond.employee where 
+not middlename = 'Pd' and address = 'Bhaktapur Nepal';
+
+#null
+SELECT * FROM bootcampbatchsecond.employee where middlename is null and firstname = 'Sita';
+SELECT * FROM bootcampbatchsecond.employee where middlename is not null;
+
+#in (1,8,4,5)
+SELECT * FROM bootcampbatchsecond.employee where id in (1,8,4,5);
+SELECT * FROM bootcampbatchsecond.employee where firstname in('Ram','Pd') and salary in (450,4567.5678);
+
+#insert
+ 
+#1. first way
+insert into bootcampbatchsecond.employee (middlename,firstname,address,dob,salary) 
+values ('Ram','Pd','Kb Nepal','2020-01-22','2345.454567');
+
+#2. second way
+insert into bootcampbatchsecond.employee 
+values (7,'Raghu','Pd','Dolakha Nepal','1990-01-22','1000.454567');
